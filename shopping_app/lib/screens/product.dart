@@ -26,7 +26,7 @@ class ProductPge extends StatelessWidget {
                 title: Text(products[index].name),
                 subtitle: Text('\$${products[index].price}'),
                 trailing: IconButton(
-                  icon: const Icon(Icons.add_chart),
+                  icon: const Icon(Icons.shopping_cart_checkout),
                   onPressed: () {
                     AddToCart(products[index]);
                   },
