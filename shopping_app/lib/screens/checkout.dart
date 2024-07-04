@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/product.dart';
+import 'package:shopping_app/screens/ordersuccessful.dart';
 
 class CheckoutSce extends StatelessWidget {
   const CheckoutSce(
@@ -8,23 +9,23 @@ class CheckoutSce extends StatelessWidget {
   final List<Product> checkout;
   final Function(Product) removeFromCart;
 
-  void showOrderSuccessfullMsg(BuildContext context) {
-    showAboutDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: const Text('Order Successful'),
-            content: const Text('Your order has been placed successfully'),
-            actions: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: const Text('OK'))
-            ],
-          );
-        });
-  }
+  // void showOrderSuccessfullMsg(BuildContext context) {
+  //   showAboutDialog(
+  //       context: context,
+  //       builder: (context) {
+  //         return AlertDialog(
+  //           title: const Text('Order Successful'),
+  //           content: const Text('Your order has been placed successfully'),
+  //           actions: [
+  //             TextButton(
+  //                 onPressed: () {
+  //                   Navigator.of(context).pop();
+  //                 },
+  //                 child: const Text('OK'))
+  //           ],
+  //         );
+  //       });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -66,9 +67,12 @@ class CheckoutSce extends StatelessWidget {
           padding: EdgeInsets.all(16),
           child: ElevatedButton(
               onPressed: () {
-                showOrderSuccessfullMsg(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const OrdersuccessfulScreen()));
               },
-              child: const Text('Place Your Order')),
+              child: const Text('Place Order')),
         )
       ],
     );

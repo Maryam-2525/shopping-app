@@ -24,7 +24,12 @@ class ProductPge extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 title: Text(products[index].name),
-                subtitle: Text('\$${products[index].price}'),
+                subtitle: Text(
+                  '\$${products[index].price}',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 trailing: IconButton(
                   icon: const Icon(Icons.shopping_cart_checkout),
                   onPressed: () {

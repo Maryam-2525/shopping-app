@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.pink)),
@@ -100,145 +101,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
         ],
         currentIndex: SelectedIndex,
         selectedItemColor: Colors.white,
+        unselectedItemColor: Theme.of(context).colorScheme.secondaryContainer,
         backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onTap: onTapItem,
       ),
     );
   }
 }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//         title: 'Shopping App',
-//         theme: ThemeData(
-//           useMaterial3: true,
-//           colorScheme:
-//               ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 144, 39, 8)),
-//         ),
-//         debugShowCheckedModeBanner: false,
-//         home: Scaffold(
-//           appBar: AppBar(
-//             title: const Text("Shopping App"),
-//             backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-//           ),
-//           backgroundColor: Theme.of(context).colorScheme.primary,
-//           body: const BottomNavBar(),
-//         ));
-//   }
-// }
-
-// // class MyHomePage extends StatefulWidget {
-// //   const MyHomePage({super.key});
-
-// //   // This widget is the home page of your application. It is stateful, meanin
-
-// //   @override
-// //   State<MyHomePage> createState() => _MyHomePageState();
-// // }
-
-// // class _MyHomePageState extends State<MyHomePage> {
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     return Scaffold(
-// //         appBar: AppBar(
-// //           backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-// //           title: Text("Shopping App"),
-// //         ),
-// //         body: ());
-// //   }
-// // }
-
-// class BottomNavBar extends StatefulWidget {
-//   const BottomNavBar({super.key});
-
-//   @override
-//   State<BottomNavBar> createState() => _BottomNavBarState();
-// }
-
-// class _BottomNavBarState extends State<BottomNavBar> {
-//   var SelectedIndex = 0;
-//   @override
-//   Widget build(BuildContext context) {
-//     Widget page;
-//     switch (SelectedIndex) {
-//       case 0:
-//         page = const ProductPge();
-//         break;
-//       case 1:
-//         page = const Checkout();
-//         break;
-//       default:
-//         throw UnimplementedError('no widget for $SelectedIndex');
-//     }
-//     return Row(
-//       children: [
-//         BottomNavigationBar(
-//           backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-//           items: const <BottomNavigationBarItem>[
-//             BottomNavigationBarItem(
-//                 icon: Icon(Icons.shop_two), label: 'Products'),
-//             BottomNavigationBarItem(
-//                 icon: Icon(Icons.shopping_cart_checkout), label: 'Products')
-//           ],
-//           currentIndex: SelectedIndex,
-//           onTap: (value) {
-//             setState(() {
-//               SelectedIndex = value;
-//             });
-//           },
-//         ),
-//       ],
-//     );
-//   }
-// }
-// }
