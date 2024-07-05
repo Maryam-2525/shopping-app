@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_app/models/product.dart';
-import 'package:shopping_app/screens/ordersuccessful.dart';
+import 'package:shopping_app/screens/ordersuccess.dart';
 
 class CheckoutSce extends StatelessWidget {
   const CheckoutSce(
@@ -8,24 +8,6 @@ class CheckoutSce extends StatelessWidget {
 
   final List<Product> checkout;
   final Function(Product) removeFromCart;
-
-  // void showOrderSuccessfullMsg(BuildContext context) {
-  //   showAboutDialog(
-  //       context: context,
-  //       builder: (context) {
-  //         return AlertDialog(
-  //           title: const Text('Order Successful'),
-  //           content: const Text('Your order has been placed successfully'),
-  //           actions: [
-  //             TextButton(
-  //                 onPressed: () {
-  //                   Navigator.of(context).pop();
-  //                 },
-  //                 child: const Text('OK'))
-  //           ],
-  //         );
-  //       });
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +46,7 @@ class CheckoutSce extends StatelessWidget {
                   );
                 })),
         Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: ElevatedButton(
               onPressed: () {
                 Navigator.push(

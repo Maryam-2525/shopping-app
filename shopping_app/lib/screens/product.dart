@@ -3,9 +3,9 @@ import 'package:shopping_app/models/product.dart';
 
 class ProductPge extends StatelessWidget {
   const ProductPge(
-      {super.key, required this.products, required this.AddToCart});
+      {super.key, required this.products, required this.addToCart});
   final List<Product> products;
-  final Function(Product) AddToCart;
+  final Function(Product) addToCart;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ProductPge extends StatelessWidget {
                 trailing: IconButton(
                   icon: const Icon(Icons.shopping_cart_checkout),
                   onPressed: () {
-                    AddToCart(products[index]);
+                    addToCart(products[index]);
                   },
                 ),
               ),

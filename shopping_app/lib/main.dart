@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:shopping_app/screens/checkout.dart';
 import 'package:shopping_app/screens/product.dart';
 import 'package:shopping_app/models/product.dart';
@@ -31,7 +30,7 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int SelectedIndex = 0;
+  int selectedIndex = 0;
   final List<Product> product = [
     Product(name: 'Baby dress', price: 4500, imageUrl: 'assets/babydress.png'),
     Product(
@@ -56,7 +55,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   void onTapItem(int index) {
     setState(() {
-      SelectedIndex = index;
+      selectedIndex = index;
     });
   }
 
@@ -83,10 +82,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
       body: Center(
           child:
               // widgetOptions(context, product, checkout).elementAt(SelectedIndex),
-              SelectedIndex == 0
+              selectedIndex == 0
                   ? ProductPge(
                       products: product,
-                      AddToCart: addToCart,
+                      addToCart: addToCart,
                     )
                   : CheckoutSce(
                       checkout: checkout,
@@ -99,7 +98,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart_checkout_rounded), label: 'Cart')
         ],
-        currentIndex: SelectedIndex,
+        currentIndex: selectedIndex,
         selectedItemColor: Colors.white,
         unselectedItemColor: Theme.of(context).colorScheme.secondaryContainer,
         backgroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
